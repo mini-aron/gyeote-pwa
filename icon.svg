@@ -11,9 +11,9 @@
       <stop offset="1" stop-color="#C98BFF" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="light" cx="575" cy="560" r="300" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF8E6"/>
-      <stop offset="0.45" stop-color="#FFD592"/>
-      <stop offset="1" stop-color="#F6A253"/>
+      <stop offset="0" stop-color="#FFE3AE"/>
+      <stop offset="0.5" stop-color="#FFBC6A"/>
+      <stop offset="1" stop-color="#EC8A42"/>
     </radialGradient>
     <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#FFD08A" stop-opacity="0.55"/>
@@ -28,6 +28,8 @@
       <stop offset="1" stop-color="#262D6C"/>
     </linearGradient>
     <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <clipPath id="opening"><path d="M362 772 V420 A150 150 0 0 1 662 420 V772 Z"/></clipPath>
   </defs>
 
   <rect width="1024" height="1024" fill="url(#sky)"/>
@@ -44,17 +46,23 @@
   </g>
 
   <!-- floor light spill -->
-  <path d="M456 772 L662 772 L840 1024 L420 1024 Z" fill="url(#spill)" filter="url(#soft)"/>
+  <path d="M424 772 L662 772 L830 1024 L380 1024 Z" fill="url(#spill)" filter="url(#soft)"/>
 
   <!-- frame -->
   <path d="M336 772 V420 A176 176 0 0 1 688 420 V772 Z" fill="url(#frame)"/>
   <!-- glowing opening -->
   <path d="M362 772 V420 A150 150 0 0 1 662 420 V772 Z" fill="url(#light)"/>
 
+  <!-- cross of light, partly hidden behind the door leaf -->
+  <g clip-path="url(#opening)">
+  <path d="M486 318 H538 V428 H616 V480 H538 V724 H486 V480 H408 V428 H486 Z" fill="#FFFFFF" filter="url(#glow)" opacity="0.85"/>
+  <path d="M490 322 H534 V432 H612 V476 H534 V720 H490 V476 H412 V432 H490 Z" fill="#FFFDF4"/>
+  </g>
+
   <!-- door leaf, swung inward on the left hinge -->
-  <path d="M362 772 V420 C362 352 396 300 456 282 V740 Z" fill="url(#leaf)"/>
-  <path d="M456 282 V740" stroke="#FFE2AE" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
-  <circle cx="434" cy="540" r="9" fill="#FFC77A"/>
+  <path d="M362 772 V420 C362 360 384 314 424 294 V748 Z" fill="url(#leaf)"/>
+  <path d="M424 294 V748" stroke="#FFE2AE" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="406" cy="540" r="8" fill="#FFC77A"/>
 
   <!-- ground line -->
   <rect x="240" y="770" width="544" height="4" rx="2" fill="#FFE2AE" opacity="0.18"/>
