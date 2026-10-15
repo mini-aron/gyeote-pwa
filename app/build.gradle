@@ -21,7 +21,7 @@ plugins {
 }
 
 def twaManifest = [
-    applicationId: 'com.gyeote.app',
+    applicationId: 'site.gyeote.app',
     hostName: 'gyeote.site', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: '곁에 - 말씀과 찬양 추천', // The application name.
@@ -54,7 +54,7 @@ android {
     compileSdkVersion 36
     namespace "com.gyeote.app"
     defaultConfig {
-        applicationId "com.gyeote.app"
+        applicationId "site.gyeote.app"
         minSdkVersion 21
         targetSdkVersion 36
         versionCode 1

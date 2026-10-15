@@ -1,5 +1,5 @@
 {
-  "packageId": "com.gyeote.app",
+  "packageId": "site.gyeote.app",
   "host": "gyeote.site",
   "name": "곁에 - 말씀과 찬양 추천",
   "launcherName": "곁에",
@@ -17,7 +17,7 @@
   "iconUrl": "https://gyeote.site/icons/icon-512.png",
   "maskableIconUrl": "https://gyeote.site/icons/icon-maskable-512.png",
   "splashScreenFadeOutDuration": 300,
-  "signingKey": { "path": "../gyeote-upload.keystore", "alias": "upload" },
+  "signingKey": { "path": "../../key/gyeote-upload.keystore", "alias": "upload" },
   "appVersionName": "1.0.0",
   "appVersionCode": 1,
   "appVersion": "1.0.0",

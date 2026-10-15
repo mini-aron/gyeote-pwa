@@ -2,7 +2,7 @@
 
 [gyeote.site](https://gyeote.site)를 Google Play용 안드로이드 앱으로 감싸는 TWA(Trusted Web Activity) 프로젝트입니다. [Bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap)으로 생성했고, 설정의 원본은 `twa-manifest.json`입니다.
 
-- packageId: `com.gyeote.app` (출시 후 변경 불가)
+- packageId: `site.gyeote.app` (출시 후 변경 불가)
 
 ## 빌드
 
@@ -22,14 +22,14 @@ npx @bubblewrap/cli update --skipVersionUpgrade
 
 ## 업로드 키
 
-- 업로드 키스토어는 레포 밖 `../gyeote-upload.keystore`(alias `upload`)에 둡니다. 절대 커밋하지 마세요.
+- 업로드 키스토어는 레포 밖 `~/Desktop/key/gyeote-upload.keystore`(alias `upload`)에 둡니다. 절대 커밋하지 마세요.
 - 직접 만들어 쓰고 비밀번호도 레포에 남기지 않습니다.
 
 처음 한 번 키를 만듭니다. 비밀번호를 물어보니 직접 입력하고, 잃어버리지 않게 따로 보관하세요.
 
 ```bash
 /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/bin/keytool -genkeypair \
-  -keystore ../gyeote-upload.keystore -alias upload \
+  -keystore ../../key/gyeote-upload.keystore -alias upload \
   -keyalg RSA -keysize 2048 -validity 10000
 ```
 
@@ -50,13 +50,13 @@ Play Console의 앱 서명 키 SHA-256 지문을 웹 레포의 `public/.well-kno
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.gyeote.app",
+    "package_name": "site.gyeote.app",
     "sha256_cert_fingerprints": ["<앱 서명 키 SHA-256>", "<업로드 키 SHA-256>"]
   }
 }]
 ```
 
-업로드 키 지문은 `keytool -list -v -keystore ../gyeote-upload.keystore -alias upload`로 확인합니다. 배포 후 `https://gyeote.site/.well-known/assetlinks.json`이 열리는지 확인하세요.
+업로드 키 지문은 `keytool -list -v -keystore ../../key/gyeote-upload.keystore -alias upload`로 확인합니다. 배포 후 `https://gyeote.site/.well-known/assetlinks.json`이 열리는지 확인하세요.
 
 ## 버전
 
