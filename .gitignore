@@ -10,3 +10,8 @@ app/build/
 *.idsig
 .idea/
 .DS_Store
+
+# 로컬 전용 Claude Code 하네스·OMC 상태 — 레포로 공유하지 않음
+/CLAUDE.md
+/.claude/
+/.omc/
