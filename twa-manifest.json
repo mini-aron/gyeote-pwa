@@ -17,9 +17,12 @@
   "iconUrl": "https://gyeote.site/icons/icon-512.png",
   "maskableIconUrl": "https://gyeote.site/icons/icon-maskable-512.png",
   "splashScreenFadeOutDuration": 300,
-  "signingKey": { "path": "../../key/gyeote-upload.keystore", "alias": "upload" },
+  "signingKey": {
+    "path": "../../key/gyeote-upload.keystore",
+    "alias": "upload"
+  },
   "appVersionName": "1.0.0",
-  "appVersionCode": 1,
+  "appVersionCode": 2,
   "appVersion": "1.0.0",
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
@@ -29,5 +32,6 @@
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fingerprints": []
+  "fingerprints": [],
+  "minSdkVersion": 24
 }
