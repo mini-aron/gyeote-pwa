@@ -21,9 +21,9 @@
     "path": "../../key/gyeote-upload.keystore",
     "alias": "upload"
   },
-  "appVersionName": "1.0.1",
-  "appVersionCode": 3,
-  "appVersion": "1.0.1",
+  "appVersionName": "1.0.2",
+  "appVersionCode": 4,
+  "appVersion": "1.0.2",
   "shortcuts": [
     {
       "name": "캘린더",
