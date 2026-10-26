@@ -24,7 +24,29 @@
   "appVersionName": "1.0.1",
   "appVersionCode": 3,
   "appVersion": "1.0.1",
-  "shortcuts": [],
+  "shortcuts": [
+    {
+      "name": "캘린더",
+      "shortName": "캘린더",
+      "url": "https://gyeote.site/calendar",
+      "chosenIconUrl": "https://gyeote.site/icons/shortcuts/calendar.png",
+      "chosenMaskableIconUrl": "https://gyeote.site/icons/shortcuts/calendar.png"
+    },
+    {
+      "name": "북마크",
+      "shortName": "북마크",
+      "url": "https://gyeote.site/bookmarks",
+      "chosenIconUrl": "https://gyeote.site/icons/shortcuts/bookmarks.png",
+      "chosenMaskableIconUrl": "https://gyeote.site/icons/shortcuts/bookmarks.png"
+    },
+    {
+      "name": "검색",
+      "shortName": "검색",
+      "url": "https://gyeote.site/search",
+      "chosenIconUrl": "https://gyeote.site/icons/shortcuts/search.png",
+      "chosenMaskableIconUrl": "https://gyeote.site/icons/shortcuts/search.png"
+    }
+  ],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://gyeote.site/manifest.webmanifest",
   "fallbackType": "customtabs",
