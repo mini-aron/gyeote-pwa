@@ -24,6 +24,8 @@ npx @bubblewrap/cli update --skipVersionUpgrade
 
 - `app/build.gradle`의 `signingConfigs`/`buildTypes.release.signingConfig` — `keystore.properties`로 릴리스 AAB 서명
 - `app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml`의 `<monochrome>` 줄과 `app/src/main/res/drawable/ic_launcher_monochrome.xml` — Android 13+ 테마 아이콘
+- 루트 `build.gradle`의 `jcenter()` → `mavenCentral()` — Gradle 9에서 제거될 저장소
+- `AndroidManifest.xml`의 `android:allowBackup="false"` — 데이터는 Chrome에 있어서 앱 백업으로 얻는 게 없다
 
 ## 업로드 키
 
