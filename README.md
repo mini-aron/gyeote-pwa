@@ -20,6 +20,13 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 npx @bubblewrap/cli update --skipVersionUpgrade
 ```
 
+`update`는 `app/`과 루트 `build.gradle`을 지우고 템플릿으로 다시 만듭니다. 아래 수동 수정은 사라지므로 `git diff`로 확인해 되살리세요.
+
+- `app/build.gradle`의 `signingConfigs`/`buildTypes.release.signingConfig` — `keystore.properties`로 릴리스 AAB 서명
+- `app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml`의 `<monochrome>` 줄과 `app/src/main/res/drawable/ic_launcher_monochrome.xml` — Android 13+ 테마 아이콘
+- 루트 `build.gradle`의 `jcenter()` → `mavenCentral()` — Gradle 9에서 제거될 저장소
+- `AndroidManifest.xml`의 `android:allowBackup="false"` — 데이터는 Chrome에 있어서 앱 백업으로 얻는 게 없다
+
 ## 업로드 키
 
 - 업로드 키스토어는 레포 밖 `~/Desktop/key/gyeote-upload.keystore`(alias `upload`)에 둡니다. 절대 커밋하지 마세요.

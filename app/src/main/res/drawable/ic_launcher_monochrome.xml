@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Monochrome layer for Android 13+ themed icons, reusing the shapes from icon.svg.
+     The open door leaf and ground line keep the arch + cross from reading as a gravestone.
+     The cross's left arm stops short of the leaf, like the clipped cross in the original. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+    <group
+        android:pivotX="512"
+        android:pivotY="508"
+        android:scaleX="0.7"
+        android:scaleY="0.7">
+        <!-- door frame -->
+        <path
+            android:fillColor="#FF000000"
+            android:fillType="evenOdd"
+            android:pathData="M336,772 V420 A176,176 0 0,1 688,420 V772 Z M362,772 V420 A150,150 0 0,1 662,420 V772 Z" />
+        <!-- door leaf -->
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M362,772 V420 C362,360 384,314 424,294 V748 Z" />
+        <!-- cross -->
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M490,322 H534 V432 H612 V476 H534 V720 H490 V476 H440 V432 H490 Z" />
+        <!-- ground line -->
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M250,764 H774 A10,10 0 0,1 774,784 H250 A10,10 0 0,1 250,764 Z" />
+    </group>
+</vector>
