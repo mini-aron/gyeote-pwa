@@ -20,9 +20,16 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 npx @bubblewrap/cli update --skipVersionUpgrade
 ```
 
-`update`는 `app/`과 루트 `build.gradle`을 지우고 템플릿으로 다시 만듭니다. 아래 수동 수정은 사라지므로 `git diff`로 확인해 되살리세요.
+`update`는 `app/`과 루트 `build.gradle`을 지우고 템플릿으로 다시 만듭니다. 결과를 그대로 커밋하지 말고 `git diff`로 원하는 변경(예: 바로가기)만 남기세요. 특히 다음은 `update`가 덮어쓰므로 되돌려야 합니다.
+
+- 런처 아이콘·스플래시·`store_icon.png` — 웹의 `icon-512.png`로 다시 그려져서 십자가 문 아이콘이 사라진다
+- Java 패키지와 `namespace` — `site/gyeote/app/`으로 옮겨지는데, 의도적으로 `com.gyeote.app`에 둔다
+- `androidbrowserhelper` 버전 — 템플릿 버전으로 바뀐다. 올리려면 따로 확인한 뒤 올린다
+
+그리고 아래 수동 수정은 지워지므로 되살리세요.
 
 - `app/build.gradle`의 `signingConfigs`/`buildTypes.release.signingConfig` — `keystore.properties`로 릴리스 AAB 서명
+- `app/build.gradle` 바로가기 생성 태스크의 `targetClass`를 `android.namespace` 기준으로 — 템플릿은 applicationId(`site.gyeote.app`)를 붙여서 존재하지 않는 Activity를 가리킨다
 - `app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml`의 `<monochrome>` 줄과 `app/src/main/res/drawable/ic_launcher_monochrome.xml` — Android 13+ 테마 아이콘
 - 루트 `build.gradle`의 `jcenter()` → `mavenCentral()` — Gradle 9에서 제거될 저장소
 - `AndroidManifest.xml`의 `android:allowBackup="false"` — 데이터는 Chrome에 있어서 앱 백업으로 얻는 게 없다
